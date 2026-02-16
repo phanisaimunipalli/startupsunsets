@@ -121,10 +121,10 @@ const App: React.FC = () => {
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light" />
               </div>
 
-              {/* 2. FLOATING ARTIFACTS (3D Elements) */}
-              <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+              {/* 2. FLOATING ARTIFACTS (3D Elements) - Hidden on Mobile/Tablet to reduce clutter */}
+              <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
                 {/* Left Cluster */}
-                <div className="absolute top-[20%] left-[5%] md:left-[10%] animate-[floatUp_20s_linear_infinite]">
+                <div className="absolute top-[20%] left-[5%] xl:left-[10%] animate-[floatUp_20s_linear_infinite]">
                   <div className="w-48 p-4 rounded-2xl bg-white/60 backdrop-blur-md border border-white/40 shadow-xl shadow-indigo-500/5 rotate-[-6deg] transform hover:scale-110 transition-transform duration-500">
                     <div className="flex items-center gap-2 mb-2 text-rose-500 font-bold text-xs uppercase tracking-wider">
                       <AlertTriangle size={12} /> Valuation Crash
@@ -138,7 +138,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-[25%] left-[15%] animate-[floatUp_25s_linear_infinite] delay-1000 hidden sm:block">
+                <div className="absolute bottom-[25%] left-[15%] animate-[floatUp_25s_linear_infinite] delay-1000">
                   <div className="w-40 p-3 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/30 shadow-lg rotate-[3deg]">
                     <div className="h-2 w-12 bg-slate-200 rounded-full mb-2" />
                     <div className="text-lg font-bold text-slate-700">
@@ -149,7 +149,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Right Cluster */}
-                <div className="absolute top-[15%] right-[5%] md:right-[12%] animate-[floatUp_18s_linear_infinite] delay-500">
+                <div className="absolute top-[15%] right-[5%] xl:right-[12%] animate-[floatUp_18s_linear_infinite] delay-500">
                   <div className="w-52 p-4 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/50 shadow-2xl shadow-orange-500/10 rotate-[4deg] transform hover:rotate-0 transition-all">
                     <div className="flex items-center gap-2 mb-2 text-orange-500 font-bold text-xs uppercase tracking-wider">
                       <Zap size={12} /> Burn Rate
@@ -163,7 +163,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-[20%] right-[18%] animate-[floatUp_22s_linear_infinite] delay-1500 hidden sm:block">
+                <div className="absolute bottom-[20%] right-[18%] animate-[floatUp_22s_linear_infinite] delay-1500">
                   <div className="w-44 p-4 rounded-xl bg-white/40 backdrop-blur-md border border-white/20 shadow-lg rotate-[-2deg]">
                     <div className="text-lg font-bold text-slate-600">
                       Juicero
@@ -176,15 +176,15 @@ const App: React.FC = () => {
               </div>
 
               {/* 3. HERO CONTENT */}
-              <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center">
+              <div className="relative z-10 px-4 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/60 border border-white/80 shadow-sm text-slate-500 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-700 ring-1 ring-slate-900/5">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 sm:px-5 sm:py-2 rounded-full bg-white/60 border border-white/80 shadow-sm text-slate-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6 sm:mb-8 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-700 ring-1 ring-slate-900/5">
                   <Sparkles size={14} className="text-[#FF8C42]" />
                   <span>The Archive of Missed Opportunities</span>
                 </div>
 
                 {/* Main Headline */}
-                <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-slate-900 mb-6 leading-[0.95] animate-in fade-in slide-in-from-bottom-6 duration-1000">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 mb-6 leading-[1.1] sm:leading-[0.95] animate-in fade-in slide-in-from-bottom-6 duration-1000">
                   Why do promising{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8C42] to-[#4B3756]">
                     startups
@@ -192,24 +192,24 @@ const App: React.FC = () => {
                   fail?
                 </h1>
 
-                <p className="mt-2 text-xl sm:text-2xl text-slate-500 max-w-3xl mx-auto mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 font-medium">
+                <p className="mt-2 text-lg sm:text-2xl text-slate-500 max-w-3xl mx-auto mb-10 sm:mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 font-medium px-4">
                   Analyze the{" "}
                   <strong className="text-slate-800">missed pivots</strong> that
                   might have saved the $100B graveyard.
                 </p>
 
                 {/* 2026 FUTURE SEARCH BAR */}
-                <div className="w-full max-w-5xl mx-auto animate-in fade-in scale-95 duration-500 delay-200 relative z-20 group">
+                <div className="w-full max-w-md sm:max-w-2xl mx-auto animate-in fade-in scale-95 duration-500 delay-200 relative z-20 group px-2 sm:px-0">
                   {/* Living Gradient Aura */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 via-rose-400 to-indigo-400 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 
                   <form
                     onSubmit={handleHeroSubmit}
-                    className="relative flex items-center bg-white/90 backdrop-blur-2xl rounded-full p-2 ring-1 ring-slate-200/50 shadow-2xl shadow-indigo-500/10 transition-transform transform group-hover:scale-[1.01]"
+                    className="relative flex items-center bg-white/90 backdrop-blur-2xl rounded-full p-1.5 sm:p-2 ring-1 ring-slate-200/50 shadow-2xl shadow-indigo-500/10 transition-transform transform group-hover:scale-[1.01]"
                   >
-                    <div className="pl-6 pr-4 flex items-center justify-center">
+                    <div className="pl-4 sm:pl-6 pr-2 sm:pr-4 flex items-center justify-center">
                       <div className="relative">
-                        <Search className="w-6 h-6 text-slate-400 group-focus-within:text-[#FF8C42] transition-colors" />
+                        <Search className="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 group-focus-within:text-[#FF8C42] transition-colors" />
                         {/* Pulsing AI Dot */}
                         <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#FF8C42] rounded-full animate-ping opacity-0 group-focus-within:opacity-100" />
                       </div>
@@ -218,20 +218,20 @@ const App: React.FC = () => {
                       type="text"
                       value={heroInput}
                       onChange={(e) => setHeroInput(e.target.value)}
-                      placeholder="Search your idea... e.g. Food delivery, AI Customer Service, Credit cards"
-                      className="flex-grow h-14 bg-transparent border-none outline-none text-xl text-slate-800 placeholder:text-slate-400/80 font-medium w-full"
+                      placeholder="Analyze a startup... e.g. 'Quibi'"
+                      className="flex-grow h-12 sm:h-14 bg-transparent border-none outline-none text-base sm:text-xl text-slate-800 placeholder:text-slate-400/80 font-medium w-full min-w-0"
                     />
                     <button
                       type="submit"
-                      className="hidden sm:flex items-center justify-center w-14 h-14 rounded-full bg-slate-900 text-white hover:bg-[#FF8C42] hover:scale-105 transition-all duration-300 shadow-lg"
+                      className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-slate-900 text-white hover:bg-[#FF8C42] hover:scale-105 transition-all duration-300 shadow-lg shrink-0"
                     >
-                      <ArrowLeft className="w-5 h-5 rotate-180" />
+                      <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 rotate-180" />
                     </button>
                   </form>
                 </div>
 
                 {/* Futuristic Tags */}
-                <div className="mt-8 flex flex-wrap justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 px-2">
                   {[
                     "AI Wearables",
                     "Vertical Farming",
@@ -245,7 +245,7 @@ const App: React.FC = () => {
                         e.stopPropagation();
                         handleSearch(term);
                       }}
-                      className="px-4 py-2 rounded-full bg-white/40 border border-slate-200 hover:bg-white hover:border-orange-200 text-slate-500 hover:text-[#FF8C42] text-sm font-semibold transition-all shadow-sm backdrop-blur-sm"
+                      className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/40 border border-slate-200 hover:bg-white hover:border-orange-200 text-slate-500 hover:text-[#FF8C42] text-xs sm:text-sm font-semibold transition-all shadow-sm backdrop-blur-sm"
                     >
                       {term}
                     </button>
@@ -254,7 +254,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Scroll Indicator */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+              <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40 hidden sm:block">
                 <div className="flex flex-col items-center gap-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
                     Explore Categories
@@ -277,28 +277,28 @@ const App: React.FC = () => {
         {isResultsView && (
           <div className="animate-in fade-in zoom-in-95 duration-500">
             {/* Mission Control Header - WHITE THEME */}
-            <div className="relative h-[40vh] min-h-[300px] w-full overflow-hidden bg-slate-50 border-b border-slate-200">
+            <div className="relative h-auto min-h-[35vh] w-full overflow-hidden bg-slate-50 border-b border-slate-200">
               {/* Clean Grid Background */}
               <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_100%,transparent_100%)]"></div>
               </div>
 
               {/* Top Nav */}
-              <div className="absolute top-0 left-0 w-full p-6 sm:p-8 flex justify-between items-start z-10">
+              <div className="absolute top-0 left-0 w-full p-4 sm:p-8 flex justify-between items-start z-10">
                 <button
                   onClick={handleGoHome}
-                  className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all text-sm font-medium text-slate-500 hover:text-slate-900"
+                  className="group flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all text-xs sm:text-sm font-medium text-slate-500 hover:text-slate-900"
                 >
-                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                  Back to Archive
+                  <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4 group-hover:-translate-x-1 transition-transform" />
+                  Back
                 </button>
-                <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
-                  <Activity size={12} className="animate-pulse" /> SYSTEM ONLINE
+                <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest text-emerald-600 bg-emerald-50 px-2 py-1 sm:px-3 sm:py-1 rounded-full border border-emerald-100">
+                  <Activity size={10} className="animate-pulse" /> SYSTEM ONLINE
                 </div>
               </div>
 
               {/* Main Header Content */}
-              <div className="absolute bottom-0 left-0 w-full p-8 sm:p-12 max-w-7xl mx-auto flex flex-col items-start justify-end z-10">
+              <div className="relative pt-24 pb-12 sm:pb-12 px-6 sm:px-12 max-w-7xl mx-auto flex flex-col items-start justify-end z-10 h-full">
                 <div className="flex items-center gap-3 mb-4 animate-in fade-in slide-in-from-bottom-2 duration-500 delay-100">
                   <div className="flex items-center gap-2 px-2 py-1 rounded bg-orange-50 border border-orange-100">
                     <FileText size={10} className="text-[#FF8C42]" />
@@ -312,11 +312,11 @@ const App: React.FC = () => {
                   </span>
                 </div>
 
-                <h1 className="text-5xl sm:text-7xl font-bold text-slate-900 mb-4 tracking-tighter leading-none animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 mb-4 tracking-tighter leading-tight sm:leading-none animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
                   {activeCategory ? activeCategory.name : `"${searchQuery}"`}
                 </h1>
 
-                <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-500 delay-300">
+                <p className="text-lg sm:text-xl text-slate-500 font-medium leading-relaxed max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-500 delay-300">
                   {activeCategory
                     ? activeCategory.description
                     : `Deep forensic analysis of verifiable failures related to ${searchQuery}.`}
@@ -342,8 +342,8 @@ const App: React.FC = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-white border-t border-slate-100 py-12 relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <footer className="bg-white border-t border-slate-100 py-8 sm:py-12 relative z-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
             <Sparkles size={16} className="text-[#FF8C42]" />
             <span>
