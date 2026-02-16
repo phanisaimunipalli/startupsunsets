@@ -102,12 +102,12 @@ const App: React.FC = () => {
         onClose={() => setSelectedStartup(null)}
       />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-28">
         {/* LANDING PAGE STATE */}
         {!isResultsView && (
           <>
             {/* HERO SECTION */}
-            <div className="relative min-h-[92vh] w-full overflow-hidden flex flex-col items-center justify-center perspective-1000">
+            <div className="relative min-h-[85vh] w-full overflow-hidden flex flex-col items-center justify-center perspective-1000 -mt-20">
               {/* 1. ARCHITECTURAL BACKGROUND */}
               <div className="absolute inset-0 z-0 bg-slate-50">
                 {/* Perspective Grid */}
@@ -284,7 +284,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Top Nav */}
-              <div className="absolute top-0 left-0 w-full p-4 sm:p-8 flex justify-between items-start z-10">
+              <div className="absolute top-0 left-0 w-full p-4 sm:p-8 flex justify-between items-start z-10 pt-32">
                 <button
                   onClick={handleGoHome}
                   className="group flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all text-xs sm:text-sm font-medium text-slate-500 hover:text-slate-900"
@@ -298,7 +298,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Main Header Content */}
-              <div className="relative pt-24 pb-12 sm:pb-12 px-6 sm:px-12 max-w-7xl mx-auto flex flex-col items-start justify-end z-10 h-full">
+              <div className="relative pt-12 pb-12 sm:pb-12 px-6 sm:px-12 max-w-7xl mx-auto flex flex-col items-start justify-end z-10 h-full">
                 <div className="flex items-center gap-3 mb-4 animate-in fade-in slide-in-from-bottom-2 duration-500 delay-100">
                   <div className="flex items-center gap-2 px-2 py-1 rounded bg-orange-50 border border-orange-100">
                     <FileText size={10} className="text-[#FF8C42]" />
