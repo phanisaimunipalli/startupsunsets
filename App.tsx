@@ -199,7 +199,7 @@ const App: React.FC = () => {
                 </p>
 
                 {/* 2026 FUTURE SEARCH BAR */}
-                <div className="w-full max-w-md sm:max-w-2xl mx-auto animate-in fade-in scale-95 duration-500 delay-200 relative z-20 group px-2 sm:px-0">
+                <div className="w-full max-w-md sm:max-w-4xl mx-auto animate-in fade-in scale-95 duration-500 delay-200 relative z-20 group px-2 sm:px-0">
                   {/* Living Gradient Aura */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 via-rose-400 to-indigo-400 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 
@@ -218,7 +218,7 @@ const App: React.FC = () => {
                       type="text"
                       value={heroInput}
                       onChange={(e) => setHeroInput(e.target.value)}
-                      placeholder="Analyze a startup... e.g. 'Quibi'"
+                      placeholder="Search your idea... e.g., Social apps for Pets, Uber for Laundry, AI Customer Service"
                       className="flex-grow h-12 sm:h-14 bg-transparent border-none outline-none text-base sm:text-xl text-slate-800 placeholder:text-slate-400/80 font-medium w-full min-w-0"
                     />
                     <button
